@@ -1,0 +1,282 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    background: #111;
+}
+
+
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+}
+
+
+.modul-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 475px;
+    height: 100vh;
+    background: #000;
+}
+
+
+
+.visiol-mouse {
+    display: inline-block;
+    overflow: hidden;
+    width: 20px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background: transparent !important;
+
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #fff;
+        transform: translateX(-50%);
+
+        animation-name: mouseScroll;
+        animation-duration: 2.4s;
+        animation-iteration-count: infinite;
+    }
+
+
+    @keyframes mouseScroll {
+        0% {
+            top: 20%;
+            opacity: 1;
+            box-shadow: 0 0 15px #fff;
+        }
+
+        40% {
+            top: 35%;
+            opacity: 0.8;
+        }
+
+
+        100% {
+            top: 95%;
+            opacity: 0.05;
+            box-shadow: 0 0 5px #ffffff24;
+        }
+    }
+}
+
+
+
+.burger {
+    position: relative;
+    z-index: 999;
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 20px;
+
+    .burger__item {
+        position: absolute;
+        display: block;
+        width: inherit;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+        transition: ease .333s;
+
+        &:nth-child(2) {
+            left: -30%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:first-child {
+            top: 0;
+        }
+
+        &:last-child {
+            bottom: 0px;
+        }
+    }
+
+    &.burger_active {
+        .burger__item:nth-child(1) {
+            transform: rotate(34deg);
+            transform-origin: center left;
+        }
+
+        .burger__item:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger__item:nth-child(3) {
+            transform: rotate(-34deg);
+            transform-origin: center left;
+        }
+    }
+
+}
+
+
+
+.nav {
+    z-index: 99;
+    position: absolute;
+    min-width: 100%;
+
+    &__inner {
+        list-style-type: none;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        height: 100px;
+        border-bottom: 2px solid #fff;
+    }
+
+    &__item {
+        color: #fff;
+        align-self: center;
+        text-transform: capitalize;
+
+
+        font-family: Cormorant Garamond;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+
+        &_active {
+            color: #CDAA7D;
+            border-bottom: 1px solid #CDAA7D;
+        }
+    }
+
+    .nav__item_link {
+
+        align-self: center;
+        display: block;
+        width: 24px;
+        height: 24px;
+        background: url('../images/svg/insta.svg') center center no-repeat;
+        background-size: contain;
+    }
+
+    .nav__item_menu {
+        align-self: center;
+    }
+}
+
+
+.screensaver {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../images/leyaot.jpeg") center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+    display: grid;
+
+    &-content {
+        padding: 0 15px;
+        align-self: center;
+        justify-self: center;
+        max-width: 961px;
+    }
+
+
+    &__title {
+        color: #fff;
+        text-align: center;
+        font-family: Garamond;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+
+        font-family: 'Cormorant Garamond', serif;
+
+        user-select: none;
+    }
+
+    .sub-info {
+        cursor: pointer;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-family: 'Cormorant Garamond', serif;
+
+
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%;
+
+        .visiol-mouse {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+
+//=================================================================>>>
+
+.cite {
+    padding-top: 122px;
+    padding-bottom: 95px;
+
+    &__content {
+        padding-top: 126px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        max-width: 856px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 64px;
+            background: url('../images/svg/coma.svg') center center no-repeat;
+            background-size: contain;
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        p {
+            font-size: 27px;
+            font-weight: 700;
+            line-height: 130%;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+        }
+    }
+}
+
+
+//=================================================================>>>
+
+
