@@ -11,6 +11,12 @@
 
 
     <link rel="stylesheet" href="./style/style.css">
+
+    <script type="module">
+        import Main from "./main.js";
+        let main = new Main()
+        main.render()
+    </script>
 </head>
 
 <body>
@@ -61,8 +67,6 @@
     </header>
 
     <main class="container">
-
-
         <section class="cite">
             <article class="cite__content">
                 <p>
@@ -74,14 +78,41 @@
                 </p>
             </article>
         </section>
-
-        <section class="offer">
-            <div class="offer-grid">
-                
+        <section class="offer" data-offer-grid></section>
+        <section class="brands">
+            <div class="brands__inner">
+                <div class="brands__item">
+                    <img src="./images/products/bilbord/k.png" alt="">
+                </div>
+                <div class="brands__item">
+                    <img src="./images/products/bilbord/o.png" alt="">
+                </div>
+                <div class="brands__item">
+                    <img src="./images/products/bilbord/y.png" alt="">
+                </div>
+                <div class="brands__item">
+                    <img src="./images/products/bilbord/a.png" alt="">
+                </div>
             </div>
+        </section>
+
+        <section class="works" data-work-filter>
+            <header class="section-heder">
+                <h2 class="section-heder__title">наши работы</h2>
+            </header>
         </section>
     </main>
 
+    <footer class="footer container">
+        <div class="footer__inner">
+            <div class="footer__item">
+                <h4 class="item-title">наши контакты</h4>
+                <a href="cell:+380503564785">+380(50)356-47-85</a>
+                <a href="cell:+380503564785">+380(50)356-47-85</a>
+                <a href="">Новоостровский проспект, дом 36 лит. С</a>
+            </div>
+        </div>
+    </footer>
 
     <script type="module" src="./main.js"></script>
 </body>

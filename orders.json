@@ -1,0 +1,14 @@
+[
+    {
+        "name": "маникюр",
+        "image": "nails.jpeg"
+    },
+    {
+        "name": "педикюр",
+        "image": "nailsLags.jpeg"
+    },
+    {
+        "name": "уход",
+        "image": "crema.jpeg"
+    }
+]
