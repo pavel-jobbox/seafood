@@ -1,0 +1,26 @@
+[
+    {
+        "name": "парикхмахерские услуги",
+        "image": "hairCut.jpeg"
+    },
+    {
+        "name": "маникюр",
+        "image": "nails.jpeg"
+    },
+    {
+        "name": "педикюр",
+        "image": "nailsLags.jpeg"
+    },
+    {
+        "name": "уход",
+        "image": "crema.jpeg"
+    },
+    {
+        "name": "косметология",
+        "image": "buty.jpeg"
+    },
+    {
+        "name": "визаж",
+        "image": "visage.jpeg"
+    }
+]

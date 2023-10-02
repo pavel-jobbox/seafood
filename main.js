@@ -1,46 +1,28 @@
 import ce from "./assets/ce.js";
 import of from "./module/offer-grid/og.js";
 import Wf from "./module/work-filters/wf.js"
+import Info from "./module/info/info.js";
 
-
-let x = [
-    {
-        "name": "парикхмахерские услуги",
-        "image": "hairCut.jpeg"
-    },
-    {
-        "name": "маникюр",
-        "image": "nails.jpeg"
-    },
-    {
-        "name": "педикюр",
-        "image": "nailsLags.jpeg"
-    },
-    {
-        "name": "уход",
-        "image": "crema.jpeg"
-    },
-    {
-        "name": "косметология",
-        "image": "buty.jpeg"
-    },
-    {
-        "name": "визаж",
-        "image": "visage.jpeg"
-    }
-]
 
 export default class Main {
     async render() {
-
+        this.if = await this.fatchInfo();
         this.wfd = await this.fatchWorks();
-
+        this.of = await this.fetchOffer()
+        this.renderInfo()
         this.renderWorkFilter()
         this.renderOfferGrid();
     }
 
+    renderInfo() {
+        let info = new Info(this.if);
+        document.querySelectorAll('[data-our-info]').forEach((i) => {
+            i.append(info.elem)
+        })
+    }
+
     renderOfferGrid() {
-        let grid = new of(x)
+        let grid = new of(this.of)
         document.querySelector('[data-offer-grid]').append(grid.elem)
     }
 
@@ -50,11 +32,24 @@ export default class Main {
         document.querySelector("[data-work-filter]").append(wf.elem)
     }
 
+    async fatchInfo() {
+        let data = await fetch("./info.json");
+        let newData = await data.json()
+        return newData;
+    }
+
+    async fetchOffer() {
+        let data = await fetch("./offer.json");
+        let newData = await data.json()
+        return newData
+    }
+
     async fatchWorks() {
         let data = await fetch("./vorks.json");
         let newData = await data.json()
         return newData;
     }
+
 }
 
 
