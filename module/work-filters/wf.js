@@ -20,6 +20,7 @@ export default class {
             </div>
         `);
         this.renderContent();
+        this.addElements();
     }
 
     addEventsListener() {
@@ -51,6 +52,10 @@ export default class {
 
             this.elem.querySelector('.filter__inner').append(card)
         }
+    }
+
+    addElements() {
+        document.querySelector("[data-work-filter]").append(this.elem)
     }
 
 

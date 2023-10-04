@@ -1,3 +1,40 @@
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
+}
+.grid-section__picture {
+  display: block;
+  margin-bottom: 30px;
+  padding-top: 70%;
+  position: relative;
+  border: 2px solid rgba(205, 170, 125, 0.5);
+}
+.grid-section__picture img {
+  z-index: 2;
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grid-section__title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: lowercase;
+}
+.grid-section__title::first-letter {
+  text-transform: uppercase;
+}
+.grid-section__subtitle {
+  display: block;
+  font-weight: 300;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +42,7 @@
 }
 
 body {
+  overflow-x: hidden;
   color: #fff;
   background: #111;
   font-family: "Cormorant Garamond", serif;
@@ -19,39 +57,27 @@ a:hover {
   color: inherit;
 }
 
-.instagram-link {
-  display: block;
-  background: url("../images/svg/insta.svg") center center no-repeat;
-  background-size: contain;
-}
-
-.section-heder {
-  position: relative;
-}
-.section-heder__title {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 120%;
-  text-transform: lowercase;
-}
-.section-heder__title::first-letter {
-  text-transform: uppercase;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1140px;
 }
 
-.modul-info {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 475px;
-  height: 100vh;
-  background: #000;
+.instagram-link {
+  display: block;
+  background: url("../images/svg/insta.svg") center center no-repeat;
+  background-size: contain;
+}
+
+.section-heder .section-heder__title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: lowercase;
+}
+.section-heder .section-heder__title::first-letter {
+  text-transform: uppercase;
 }
 
 .visiol-mouse {
@@ -95,85 +121,119 @@ a:hover {
   }
 }
 
-.burger {
-  position: relative;
-  z-index: 999;
-  display: block;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 32px;
-  height: 20px;
-}
-.burger .burger__item {
-  position: absolute;
-  display: block;
-  width: inherit;
-  height: 2px;
-  background: #fff;
-  border-radius: 2px;
-  transition: ease 0.333s;
-}
-.burger .burger__item:nth-child(2) {
-  left: -30%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.burger .burger__item:first-child {
-  top: 0;
-}
-.burger .burger__item:last-child {
-  bottom: 0px;
-}
-.burger.burger_active .burger__item:nth-child(1) {
-  transform: rotate(34deg);
-  transform-origin: center left;
-}
-.burger.burger_active .burger__item:nth-child(2) {
-  opacity: 0;
-}
-.burger.burger_active .burger__item:nth-child(3) {
-  transform: rotate(-34deg);
-  transform-origin: center left;
-}
-
 .nav {
   z-index: 99;
   position: absolute;
-  min-width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .nav__inner {
-  list-style-type: none;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   height: 100px;
-  border-bottom: 2px solid #fff;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+}
+.nav__inner .instagram-link {
+  width: 24px;
+  height: 24px;
 }
 .nav__item {
-  color: #fff;
   align-self: center;
-  text-transform: capitalize;
+}
+.nav__item_link {
+  cursor: pointer;
   font-family: Cormorant Garamond;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
+  text-transform: lowercase;
   line-height: 130%;
+  color: #fff;
 }
-.nav__item_active {
+.nav__item_link::first-letter {
+  text-transform: uppercase;
+}
+.nav__item_link:hover {
+  color: #CDAA7D;
+}
+.nav__item_link.active {
   color: #CDAA7D;
   border-bottom: 1px solid #CDAA7D;
 }
-.nav .nav__item_link {
-  align-self: center;
+.nav__item_burger {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  padding-top: 60%;
+  z-index: 999;
+  position: relative;
   display: block;
-  width: 24px;
-  height: 24px;
-  background: url("../images/svg/insta.svg") center center no-repeat;
-  background-size: contain;
+  width: 32px;
+  height: 2px;
+  border-bottom: 2px solid #fff;
 }
-.nav .nav__item_menu {
-  align-self: center;
+.nav__item_burger::after, .nav__item_burger::before {
+  position: relative;
+  left: 0;
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  transition: ease 0.333s;
+}
+.nav__item_burger::after {
+  top: -12px;
+}
+.nav__item_burger::before {
+  top: -20px;
+}
+.nav__item_burger.active {
+  border-color: transparent;
+}
+.nav__item_burger.active::after {
+  top: -22px;
+  transform: rotate(38deg);
+  transform-origin: bottom left;
+}
+.nav__item_burger.active::before {
+  top: 100%;
+  transform: rotate(-38deg);
+  transform-origin: top left;
+}
+.nav .nav-modal {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  width: 475px;
+  height: 100vh;
+  background: #000;
+  transition: ease 0.333s;
+  transform: translateX(100%);
+}
+.nav .nav-modal .nav-modal__body {
+  padding: 286px 80px 15px;
+}
+.nav .nav-modal.active {
+  transform: translateX(0%);
+}
+.nav .nav-modal .info .info__item {
+  margin-bottom: 60px;
+}
+.nav .nav-modal .body-text {
+  margin-bottom: 80px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 
 .screensaver {
@@ -253,49 +313,8 @@ a:hover {
   font-family: "Cormorant Garamond", serif;
 }
 
-.offer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px 40px;
-}
-.offer-grid .offer__item:hover .offer__title {
-  color: rgb(205, 170, 125);
-  text-decoration: underline;
-}
-.offer-grid .offer__item .offer__title {
-  font-weight: 400;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  transition: ease 0.333s;
-}
-.offer-grid .offer__item .offer__title::first-letter {
-  text-transform: uppercase;
-}
-.offer-grid .offer__item .offer__picture {
-  margin-bottom: 30px;
-  position: relative;
-  display: block;
-  padding-top: 70%;
-}
-.offer-grid .offer__item .offer__picture img {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.offer-grid .offer__item .offer__picture::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  border: 2px solid rgba(205, 170, 125, 0.5);
+.offer .grid-section .grid-section__picture {
+  padding-top: 75%;
 }
 
 .brands {
@@ -357,6 +376,9 @@ a:hover {
 }
 .works .filter__controls button::first-letter {
   text-transform: uppercase;
+}
+.works .filter__controls button:hover {
+  color: #CDAA7D;
 }
 .works .filter__controls button.active {
   color: #CDAA7D;

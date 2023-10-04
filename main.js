@@ -1,74 +1,79 @@
-import ce from "./assets/ce.js";
-import of from "./module/offer-grid/og.js";
 import Wf from "./module/work-filters/wf.js"
 import Info from "./module/info/info.js";
+import GridSection from "./module/grid-section/GridSection.js";
+import Footer from "./module/footer/Footer.js";
+import Nav from "./module/nav/nav.js";
 
 
 export default class Main {
     async render() {
+        this.masters = await this.fatchMaster();
         this.if = await this.fatchInfo();
         this.wfd = await this.fatchWorks();
-        this.of = await this.fetchOffer()
+        this.offerGridFatch = await this.fetchOffer()
         this.renderInfo()
         this.renderWorkFilter()
-        this.renderOfferGrid();
-    }
-
-    renderInfo() {
-        let info = new Info(this.if);
-        document.querySelectorAll('[data-our-info]').forEach((i) => {
-            i.append(info.elem)
-        })
-    }
-
-    renderOfferGrid() {
-        let grid = new of(this.of)
-        document.querySelector('[data-offer-grid]').append(grid.elem)
+        this.renderGridSection()
+        this.renderFooter()
     }
 
 
-    renderWorkFilter() {
-        let wf = new Wf(this.wfd)
-        document.querySelector("[data-work-filter]").append(wf.elem)
+    async renderNav() {
+        const info = await this.renderInfo()
+        new Nav(info)
+    }
+
+    renderGridSection(data, datset) {
+        new GridSection(data, datset);
+    }
+
+
+    async renderFooter() {
+        let info = await this.fatchInfo()
+        new Footer(new Info(info).elem)
+    }
+
+
+
+    /*  функция жедт получения инфрпмации с сервера,
+        полученную информацию обрабатвает в моделе (info)
+        возвращет стелизированные блок кода с полученной информацией
+        документация по стилям в файле README.md
+    */
+    async renderInfo() {
+        const information = await this.fatchInfo()
+        return new Info(information).elem;
+    }
+
+
+
+    async renderWorkFilter() {
+        new Wf(await this.fatchWorks());
     }
 
     async fatchInfo() {
-        let data = await fetch("./info.json");
+        let data = await fetch("./assets/info.json");
         let newData = await data.json()
         return newData;
     }
 
+
+    async fatchMaster() {
+        let data = await fetch('./assets/masters.json');
+        let newData = await data.json()
+        return newData
+    }
+
     async fetchOffer() {
-        let data = await fetch("./offer.json");
+        let data = await fetch("./assets/offer.json");
         let newData = await data.json()
         return newData
     }
 
     async fatchWorks() {
-        let data = await fetch("./vorks.json");
+        let data = await fetch("./assets/vorks.json");
         let newData = await data.json()
         return newData;
     }
 
 }
-
-
-
-
-document.querySelector('.burger').addEventListener('click', (e) => {
-
-
-    document.querySelector('.burger').classList.toggle('burger_active');
-
-    let elem = ce(`
-        <section class="modul-info">
-            info
-        </section>`);
-
-    if (document.querySelector('.burger_active')) {
-        document.body.append(elem);
-    }
-    else {
-        document.querySelector('.modul-info').remove()
-    }
-});

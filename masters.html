@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>masters</title>
+
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/masters/style.css">
+    <link rel="stylesheet" href="./module//footer/style.css">
+
+    <script type="module">
+        import Main from "./main.js";
+        let main = new Main();
+
+        let dataMasters = await main.fatchMaster();
+        main.renderGridSection(dataMasters, 'masters');
+
+        main.renderNav()
+        main.renderFooter()
+    </script>
+
+</head>
+
+<body>
+    <header data-add-nav></header>
+    <main class="container">
+        <section class="masters" data-grid-section="masters">
+            <header class="section-heder">
+                <h2 class="section-heder__title">Наши мастера</h2>
+            </header>
+        </section>
+    </main>
+
+    <footer class="footer container" data-footer></footer>
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>
