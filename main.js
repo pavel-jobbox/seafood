@@ -3,20 +3,15 @@ import Info from "./module/info/info.js";
 import GridSection from "./module/grid-section/GridSection.js";
 import Footer from "./module/footer/Footer.js";
 import Nav from "./module/nav/nav.js";
+import GridPrise from "./module/grid-prise/GridPrise.js";
 
 
 export default class Main {
-    async render() {
-        this.masters = await this.fatchMaster();
-        this.if = await this.fatchInfo();
-        this.wfd = await this.fatchWorks();
-        this.offerGridFatch = await this.fetchOffer()
-        this.renderInfo()
-        this.renderWorkFilter()
-        this.renderGridSection()
-        this.renderFooter()
-    }
 
+
+    async renderPrice(dataset) {
+        new GridPrise(await this.fatchPrice(), dataset);
+    }
 
     async renderNav() {
         const info = await this.renderInfo()
@@ -72,6 +67,11 @@ export default class Main {
 
     async fatchWorks() {
         let data = await fetch("./assets/vorks.json");
+        let newData = await data.json()
+        return newData;
+    }
+    async fatchPrice() {
+        let data = await fetch("./assets/price.json");
         let newData = await data.json()
         return newData;
     }

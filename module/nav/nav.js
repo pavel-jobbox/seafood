@@ -14,7 +14,7 @@ export default class {
                 <a href="./index.html" class="nav__item  instagram-link"></a>
                 <a href="./index.html" class="nav__item nav__item_link">главная</a>
                 <a href="./masters.html" class="nav__item nav__item_link active">мастера</a>
-                <a href="#" class="nav__item nav__item_link">косметика</a>
+                <a href="./price.html" class="nav__item nav__item_link">цены</a>
                 <a href="#" class="nav__item nav__item_link nav__item_logo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                         <g clip-path="url(#clip0_1_23)">

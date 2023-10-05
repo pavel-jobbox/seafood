@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 @import "../module/grid-section/style.scss";
 
 * {
@@ -546,39 +547,3 @@ a {
 }
 
 //=================================================================>>>
-
-.footer {
-    padding: 80px 0;
-    border-top: solid 2px rgb(255, 255, 255, 0.5);
-    border-bottom: solid 2px rgb(255, 255, 255, 0.5);
-
-    .info {
-        align-items: start;
-        grid-auto-flow: column;
-    }
-
-
-    .instagram-link {
-        width: 36px;
-        height: 36px;
-    }
-
-    .footer__title {
-        margin-bottom: 25px;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 120%;
-        text-transform: lowercase;
-
-        &::first-letter {
-            text-transform: uppercase;
-        }
-    }
-
-    .footer__inner {
-        display: grid;
-        grid-auto-flow: column;
-        align-items: start;
-        grid-template-columns: 0.5fr 2fr 0.5fr;
-    }
-}

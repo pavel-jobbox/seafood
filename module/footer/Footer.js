@@ -22,7 +22,7 @@ export default class {
                         </defs>
                     </svg>
                 </div>
-                <div data-our-information>
+                <div class="footer__info" data-our-information>
                     ${this.info.innerHTML}
                 </div>
                 <div>

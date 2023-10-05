@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./module/grid-prise/grid-price.css">
+    <link rel="stylesheet" href="./module/footer/style.css">
+    <script type="module">
+        import Main from "./main.js"
+        const main = new Main();
+        main.renderNav()
+        main.renderPrice('b1')
+        main.renderFooter()
+    </script>
+</head>
+
+<body>
+
+    <header data-add-nav></header>
+    <main class="container">
+        <header class="section-heder">
+            <h2 class="section-heder__title">цуны на услуги</h2>
+        </header>
+        <section class="price" data-grid-price="b1">
+
+        </section>
+    </main>
+    <footer class="footer container" data-footer></footer>
+</body>
+
+</html>
