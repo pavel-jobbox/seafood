@@ -433,4 +433,12 @@ a:hover {
 .info__item a {
   display: inline-block;
   font-size: 18px;
+}
+
+.prise-page {
+  padding-top: 180px;
+}
+
+.section-heder {
+  margin-bottom: 80px;
 }/*# sourceMappingURL=style.css.map */
