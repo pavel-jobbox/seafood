@@ -1,0 +1,196 @@
+@import "./variables";
+@import "./myNormalizw";
+@import "./nav.scss";
+@import "./grid-section";
+@import "./filter";
+@import "./footer";
+
+
+//=========================================================>>
+//                                            Анимация скрола
+//=========================================================>>
+.scroller {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 20px;
+    height: 30px;
+    border: 1px solid $scroller-collor;
+    border-radius: 7px;
+    background: transparent !important;
+
+    &::after {
+        content: "";
+        display: block;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $scroller-collor;
+        transform: translateX(-50%);
+
+        animation-name: mouseScroll;
+        animation-duration: 2.4s;
+        animation-iteration-count: infinite;
+    }
+
+
+    @keyframes mouseScroll {
+        0% {
+            top: 0%;
+            opacity: 1;
+        }
+
+        19% {
+            top: 15%;
+            opacity: 0.8;
+        }
+
+
+        100% {
+            top: 80%;
+            opacity: 0;
+        }
+    }
+}
+
+
+//=========================================================>>
+//                                            ЗАГЛАВИЕ СТРАНЦЫ
+//=========================================================>>
+
+
+
+.screensaver {
+    user-select: none;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    background: linear-gradient($backgroudn-gradient, $backgroudn-gradient),
+        url("../images/leyaot.jpeg") center center no-repeat;
+    background-size: cover;
+
+    @supports(background: url('../images/leyaot.webp')) {
+        background: linear-gradient($backgroudn-gradient, $backgroudn-gradient),
+            url("../images/leyaot.webp") center center no-repeat;
+        background-size: cover;
+    }
+
+    &-content {
+        padding: 0 15px;
+        align-self: center;
+        justify-self: center;
+        max-width: 961px;
+    }
+
+
+
+    &__title {
+        color: #fff;
+        text-align: center;
+        font-family: Garamond;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .scroller-box {
+        cursor: pointer;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        p {
+            margin-left: 15px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%;
+
+        }
+
+    }
+}
+
+
+//=========================================================>>
+//                                            цытаты
+//=========================================================>>
+.cite {
+    padding-top: 122px;
+    padding-bottom: 95px;
+
+    &__content {
+        padding-top: 126px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        max-width: 856px;
+
+        p {
+            font-size: 27px;
+            font-weight: 700;
+            line-height: 130%;
+            text-align: center;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 64px;
+            background: url('../images/svg/coma.svg') center center no-repeat;
+            background-size: contain;
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+//=========================================================>>
+//                                            БРЕНДЫ
+//=========================================================>>
+
+.brands {
+    position: relative;
+    padding-top: 150px;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        gap: 0 24px;
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding-top: 40%;
+        opacity: 0.5;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 1;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import ce from "../../assets/ce.js";
+import ce from "../assets/ce.js";
 
 export default class {
     constructor(data, dataset) {
@@ -20,7 +20,9 @@ export default class {
             return ce(`
             <div class="grid-section__item">
                 <picture class="grid-section__picture">
-                    <img src="./images/${this.dataset}/${i.image}" alt="">
+                    <source srcset="./images/${this.dataset}/webp/${i.image}.webp" type="image/webp">
+                    <source srcset="./images/${this.dataset}/${i.image}.jpeg" type="image/jpeg">
+                    <img src="./images/${this.dataset}/${i.image}.jpeg" draggable="false" alt="${i.name}">
                 </picture>
                 <h3 class="grid-section__title">${i.name}</h3>
                 ${subname}

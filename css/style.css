@@ -1,41 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap");
-.grid-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px 40px;
-}
-.grid-section__picture {
-  display: block;
-  margin-bottom: 30px;
-  padding-top: 70%;
-  position: relative;
-  border: 2px solid rgba(205, 170, 125, 0.5);
-}
-.grid-section__picture img {
-  z-index: 2;
-  position: absolute;
-  top: 20px;
-  left: -20px;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.grid-section__title {
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  text-transform: lowercase;
-}
-.grid-section__title::first-letter {
-  text-transform: uppercase;
-}
-.grid-section__subtitle {
-  display: block;
-  font-weight: 300;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -43,19 +6,14 @@
 }
 
 body {
-  overflow-x: hidden;
+  background-color: #222;
   color: #fff;
-  background: #111;
   font-family: "Cormorant Garamond", serif;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
-a:hover {
-  color: inherit;
 }
 
 .container {
@@ -79,47 +37,6 @@ a:hover {
 }
 .section-heder .section-heder__title::first-letter {
   text-transform: uppercase;
-}
-
-.visiol-mouse {
-  display: inline-block;
-  overflow: hidden;
-  width: 20px;
-  height: 30px;
-  border: 2px solid #fff;
-  border-radius: 8px;
-  background: transparent !important;
-}
-.visiol-mouse::after {
-  content: "";
-  display: block;
-  position: relative;
-  top: 20%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #fff;
-  transform: translateX(-50%);
-  animation-name: mouseScroll;
-  animation-duration: 2.4s;
-  animation-iteration-count: infinite;
-}
-@keyframes mouseScroll {
-  0% {
-    top: 20%;
-    opacity: 1;
-    box-shadow: 0 0 15px #fff;
-  }
-  40% {
-    top: 35%;
-    opacity: 0.8;
-  }
-  100% {
-    top: 95%;
-    opacity: 0.05;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1411764706);
-  }
 }
 
 .nav {
@@ -174,7 +91,7 @@ a:hover {
   display: block;
   width: 32px;
   height: 2px;
-  border-bottom: 2px solid #fff;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.5);
 }
 .nav__item_burger::after, .nav__item_burger::before {
   position: relative;
@@ -283,66 +200,42 @@ a:hover {
   margin-right: 20px;
 }
 
-.cite {
-  padding-top: 122px;
-  padding-bottom: 95px;
-}
-.cite__content {
-  padding-top: 126px;
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  max-width: 856px;
-}
-.cite__content::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 64px;
-  background: url("../images/svg/coma.svg") center center no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.cite__content p {
-  font-size: 27px;
-  font-weight: 700;
-  line-height: 130%;
-  text-align: center;
-  font-family: "Cormorant Garamond", serif;
-}
-
-.offer .grid-section .grid-section__picture {
-  padding-top: 75%;
-}
-
-.brands {
-  position: relative;
-  padding-top: 150px;
-}
-.brands__inner {
+.grid-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  gap: 0 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
 }
-.brands__item {
+.grid-section__picture {
+  display: block;
+  margin-bottom: 30px;
+  padding-top: 70%;
   position: relative;
-  width: 100%;
-  padding-top: 40%;
-  opacity: 0.5;
+  border: solid 2px rgba(205, 170, 125, 0.5);
 }
-.brands__item img {
+.grid-section__picture source,
+.grid-section__picture img {
+  z-index: 2;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: -20px;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.grid-section__title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: lowercase;
+}
+.grid-section__title::first-letter {
+  text-transform: uppercase;
+}
+.grid-section__subtitle {
+  display: block;
+  font-weight: 300;
 }
 
 .works {
@@ -395,7 +288,8 @@ a:hover {
   position: relative;
   transition: ease 0.333s;
 }
-.works .filter__item img {
+.works .filter__item img,
+.works .filter__item source {
   position: absolute;
   top: 0;
   left: 0;
@@ -405,40 +299,186 @@ a:hover {
      object-fit: cover;
 }
 .works .filter__item.hide {
-  opacity: 1;
   display: none;
 }
 
-.info {
-  display: grid;
+.footer {
+  padding: 80px 0;
+  border-top: solid 2px rgba(255, 255, 255, 0.5);
+  border-bottom: solid 2px rgba(255, 255, 255, 0.5);
+  background: #222;
 }
-.info__item .info__title {
+.footer .footer__inner {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: start;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+}
+.footer .footer__inner .footer__info {
+  display: grid;
+  grid-auto-flow: column;
+}
+.footer .instagram-link {
+  width: 36px;
+  height: 36px;
+}
+.footer .footer__title,
+.footer .footer__info {
   margin-bottom: 25px;
   font-size: 24px;
   font-weight: 700;
   line-height: 120%;
+  text-transform: lowercase;
 }
-.info__text {
+.footer .footer__title::first-letter,
+.footer .info__title::first-letter {
+  text-transform: uppercase;
+}
+
+.scroller {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 20px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  background: transparent !important;
+}
+.scroller::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+  animation-name: mouseScroll;
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
+}
+@keyframes mouseScroll {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  19% {
+    top: 15%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 80%;
+    opacity: 0;
+  }
+}
+
+.screensaver {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/leyaot.jpeg") center center no-repeat;
+  background-size: cover;
+}
+@supports (background: url("../images/leyaot.webp")) {
+  .screensaver {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/leyaot.webp") center center no-repeat;
+    background-size: cover;
+  }
+}
+.screensaver-content {
+  padding: 0 15px;
+  align-self: center;
+  justify-self: center;
+  max-width: 961px;
+}
+.screensaver__title {
+  color: #fff;
+  text-align: center;
+  font-family: Garamond;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  font-family: "Cormorant Garamond", serif;
+}
+.screensaver .scroller-box {
+  cursor: pointer;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screensaver .scroller-box p {
+  margin-left: 15px;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.cite {
+  padding-top: 122px;
+  padding-bottom: 95px;
+}
+.cite__content {
+  padding-top: 126px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  max-width: 856px;
+}
+.cite__content p {
+  font-size: 27px;
+  font-weight: 700;
   line-height: 130%;
+  text-align: center;
 }
-.info__text:not(:last-child) {
-  margin-bottom: 15px;
+.cite__content::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 64px;
+  background: url("../images/svg/coma.svg") center center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.info__item {
+
+.brands {
+  position: relative;
+  padding-top: 150px;
+}
+.brands__inner {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 0 24px;
 }
-.info__item a {
-  display: inline-block;
-  font-size: 18px;
+.brands__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 40%;
+  opacity: 0.5;
 }
-
-.prise-page {
-  padding-top: 180px;
-}
-
-.section-heder {
-  margin-bottom: 80px;
+.brands__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */

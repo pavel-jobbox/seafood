@@ -1,8 +1,8 @@
-import Wf from "./module/work-filters/wf.js"
+import Filter from "./module/Filter.js";
 import Info from "./module/info/info.js";
-import GridSection from "./module/grid-section/GridSection.js";
-import Footer from "./module/footer/Footer.js";
-import Nav from "./module/nav/nav.js";
+import GridSection from "./module/GridSection.js";
+import Footer from "./module/Footer.js";
+import Nav from "./module/nav.js";
 import GridPrise from "./module/grid-prise/GridPrise.js";
 
 
@@ -43,7 +43,7 @@ export default class Main {
 
 
     async renderWorkFilter() {
-        new Wf(await this.fatchWorks());
+        new Filter(await this.fatchWorks());
     }
 
     async fatchInfo() {

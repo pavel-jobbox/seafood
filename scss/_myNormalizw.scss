@@ -1,0 +1,48 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-color;
+    color: $text-color;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1140px;
+}
+
+
+.instagram-link {
+    display: block;
+    background: url('../images/svg/insta.svg') center center no-repeat;
+    background-size: contain;
+}
+
+//====================================================================>>
+//ЗАНЛАВНИЯ СЕКЦИИ
+//====================================================================>>
+.section-heder .section-heder__title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: lowercase;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}

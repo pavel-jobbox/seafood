@@ -1,4 +1,4 @@
-import ce from "../../assets/ce.js";
+import ce from "../assets/ce.js";
 
 export default class {
     constructor(data) {
@@ -41,13 +41,14 @@ export default class {
             }
         });
     }
-
     renderContent() {
         for (let i of this.data) {
             let card = ce(`
-                <div class="filter__item" data-list=${i.name}>
-                    <img src="./images/works/${i.image}" loading="lazy" alt="${i.name}">
-                </div>            
+                <picture class="filter__item" data-list=${i.name}>
+                    <source srcset="../images/works/webp/${i.image}.webp" type="image/webp">
+                    <source srcset="./images/works/${i.image}.jpeg" type="image/jpeg">
+                    <img src="./images/works/${i.image}.jpeg" loading="lazy" alt="${i.name}">
+                </picture>            
             `);
 
             this.elem.querySelector('.filter__inner').append(card)

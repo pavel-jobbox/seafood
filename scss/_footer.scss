@@ -1,0 +1,43 @@
+@import "./variables";
+
+//=============================================================>>>
+//                                                          FOOTER
+//=============================================================>>>
+.footer {
+    padding: 80px 0;
+    border-top: $border-style;
+    border-bottom: $border-style;
+    background: $main-color;
+
+
+    .footer__inner {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: start;
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+    }
+
+    .footer__inner .footer__info {
+        display: grid;
+        grid-auto-flow: column;
+    }
+
+    .instagram-link {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer__title,
+    .footer__info {
+        margin-bottom: 25px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+        text-transform: lowercase;
+    }
+
+    .footer__title::first-letter,
+    .info__title::first-letter {
+        text-transform: uppercase;
+    }
+}

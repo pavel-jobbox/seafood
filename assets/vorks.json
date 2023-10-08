@@ -1,38 +1,38 @@
 [
     {
         "name": "nail",
-        "image": "v3.jpeg"
+        "image": "v3"
     },
     {
         "name": "nail",
-        "image": "v6.jpeg"
+        "image": "v6"
     },
     {
         "name": "haircut",
-        "image": "v5.jpeg"
+        "image": "v5"
     },
     {
         "name": "haircut",
-        "image": "v8.jpeg"
+        "image": "v8"
     },
     {
         "name": "visag",
-        "image": "v2.jpeg"
+        "image": "v2"
     },
     {
         "name": "visag",
-        "image": "v4.jpeg"
+        "image": "v4"
     },
     {
         "name": "nail",
-        "image": "v7.jpeg"
+        "image": "v7"
     },
     {
         "name": "visag",
-        "image": "v1.jpeg"
+        "image": "v1"
     },
     {
         "name": "haircut",
-        "image": "v9.jpeg"
+        "image": "v9"
     }
 ]
