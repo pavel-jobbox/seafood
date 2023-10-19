@@ -108,6 +108,7 @@ $navHeight: 100px;
 
     .nav-modal {
         user-select: none;
+        display: none;
         overflow-y: auto;
         position: absolute;
         z-index: 99;
@@ -124,11 +125,32 @@ $navHeight: 100px;
         }
 
         &.active {
+            display: block;
             transform: translateX(0%);
         }
 
-        .info .info__item {
-            margin-bottom: 60px;
+        .info__title {
+            text-transform: lowercase;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 600;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+
+        .info__item {
+            font-size: 19px;
+            font-weight: 400;
+
+            .info__text{
+                margin-bottom: 5px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
         }
 
 

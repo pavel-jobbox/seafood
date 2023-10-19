@@ -1,0 +1,26 @@
+.info__item {
+    display: flex;
+    flex-direction: column;
+
+    .info__text:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .info__text {
+        display: inline-block;
+        color: $text-color;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    a.info__text:hover {
+        color: $hover-color;
+    }
+
+    .info__status{
+        display: block;
+        color: $hover-color;
+    }
+}

@@ -10,12 +10,12 @@ export default class {
     render() {
         this.elem = ce(`
         <div class="nav">
-            <nav class="nav__inner container">
-                <a href="./index.html" class="nav__item  instagram-link"></a>
-                <a href="./index.html" class="nav__item nav__item_link">главная</a>
-                <a href="./masters.html" class="nav__item nav__item_link active">мастера</a>
-                <a href="./price.html" class="nav__item nav__item_link">цены</a>
-                <a href="#" class="nav__item nav__item_link nav__item_logo">
+            <nav class="nav__inner container" role="navigation"  aria-label="navigation">
+                <a href="./index.html" class="nav__item  instagram-link" role="link" aria-label="вернутся на главную страницу" ></a>
+                <a href="./index.html" class="nav__item nav__item_link" role="link" accesskey="m">главная</a>
+                <a href="./masters.html" class="nav__item nav__item_link" role="link" accesskey="f">мастера</a>
+                <a href="./price.html" class="nav__item nav__item_link" role="link" accesskey="p">цены</a>
+                <a href="#" class="nav__item nav__item_link nav__item_logo" role="link" aria-label="прокрутить страницу в верх">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                         <g clip-path="url(#clip0_1_23)">
                             <path
@@ -29,12 +29,12 @@ export default class {
                         </defs>
                     </svg>
                 </a>
-                <a href="#" class="nav__item nav__item_link">акции</a>
-                <a href="#" class="nav__item nav__item_link">отзывы</a>
-                <a href="#" class="nav__item nav__item_link">контакты</a>
-                <span class="nav__item nav__item_burger"></span>
+                <a href="#" class="nav__item nav__item_link" role="link">акции</a>
+                <a href="#" class="nav__item nav__item_link" role="link">отзывы</a>
+                <a href="#" class="nav__item nav__item_link" role="link">контакты</a>
+                <span class="nav__item nav__item_burger" role="link"></span>
             </nav>
-            <div class="nav-modal">
+            <div class="nav-modal" role="button">
                 <div class="nav-modal__body">
                     <p class="body-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum, adipiscing amet in egestas sem

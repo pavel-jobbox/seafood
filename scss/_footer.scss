@@ -19,25 +19,28 @@
 
     .footer__inner .footer__info {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         grid-auto-flow: column;
+    }
+
+    .footer__inner .footer__info,
+    .footer__inner {
+        gap: 0px 30px;
+    }
+
+    .footer__title,
+    .info__title {
+        margin-bottom: 19px;
+        font-size: 24px;
+        text-transform: lowercase;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
 
     .instagram-link {
         width: 36px;
         height: 36px;
-    }
-
-    .footer__title,
-    .footer__info {
-        margin-bottom: 25px;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 120%;
-        text-transform: lowercase;
-    }
-
-    .footer__title::first-letter,
-    .info__title::first-letter {
-        text-transform: uppercase;
     }
 }

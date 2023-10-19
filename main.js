@@ -1,5 +1,5 @@
 import Filter from "./module/Filter.js";
-import Info from "./module/info/info.js";
+import Info from "./module/Info.js";
 import GridSection from "./module/GridSection.js";
 import Footer from "./module/Footer.js";
 import Nav from "./module/nav.js";

@@ -3,7 +3,14 @@
 @import "./nav.scss";
 @import "./grid-section";
 @import "./filter";
+@import "./info";
 @import "./footer";
+
+
+
+main:not(.main) {
+    padding-top: 150px;
+}
 
 
 //=========================================================>>
